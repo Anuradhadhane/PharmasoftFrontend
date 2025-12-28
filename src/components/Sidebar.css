@@ -1,0 +1,122 @@
+/* ===============================
+   FORCE SIDEBAR BACKGROUND (OVERRIDE MDB)
+================================= */
+.sidebar {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+
+  /* SIDEBAR */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  
+  z-index: 1000;
+  overflow: hidden;
+  border-right: 1px solid #e5e7eb; 
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===============================
+   HEADER
+================================= */
+.sidebar-header {
+  padding: 18px 10px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+  background: #ffffff !important;
+}
+.sidebar-header img {
+  width: 190px;
+  height: auto;
+}
+
+/* ===============================
+   MENU (SCROLL ENABLED)
+================================= */
+/* ================================= */ 
+.sidebar-menu {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+
+  flex: 1;
+  overflow-y: auto;
+
+  background: #ffffff !important;
+}
+
+/* Smaller menu height */
+.sidebar-menu li {
+  margin: 4px 10px;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 14px;   /* 👈 reduced size */
+  border-radius: 8px;
+
+  font-size: 14px;      /* 👈 smaller text */
+  font-weight: 500;
+
+  color: #475569 !important;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.sidebar-menu a:hover {
+  background: #e6f7fb;
+  color: #0e6fa7 !important;
+}
+
+/* Active */
+.sidebar-menu li.active a {
+  background: #0e6fa7;
+  color: #ffffff !important;
+}
+
+/* ===============================
+   LOGOUT
+================================= */
+.sidebar-logout {
+  padding: 12px 16px;
+  border-top: 1px solid #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  cursor: pointer;
+  color: #dc2626 !important;
+  background: #ffffff !important;
+}
+
+.sidebar-logout:hover {
+  background: #fee2e2;
+}
+
+/* ===============================
+   SCROLLBAR (CLEAN)
+================================= */
+.sidebar-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.sidebar-menu::-webkit-scrollbar-track {
+  background: transparent;
+}

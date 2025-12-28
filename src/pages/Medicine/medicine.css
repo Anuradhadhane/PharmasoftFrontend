@@ -1,0 +1,189 @@
+.medicine-page {
+  margin-left: 240px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #eef2f3);
+  padding: 30px 40px;
+  
+}
+
+/* ===== Container ===== */
+.medicine-container {
+  margin-left: 40px;
+  margin-top: 40px;
+  margin-right: 80px;
+  margin-bottom: 40px;
+  
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.07);
+  border: 1px solid #bdeeee;
+  animation: fadeIn 0.3s ease-in-out;
+
+  width: 100%;
+  max-width: 1100px;
+
+  
+}
+
+
+/* ===== Title ===== */
+.medicine-container h2 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #0b6f6f;
+  
+}
+
+/* ===== Add Button ===== */
+.add-btn {
+  background: linear-gradient(90deg,  #0BB3B3, #0A6FB3);
+  color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  padding: 7px 18px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-bottom: 16px;
+}
+
+.add-btn:hover {
+  background: #39c3c3;
+  transform: translateY(-1px);
+}
+
+/* ===== Table ===== */
+.medicine-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.medicine-table thead {
+  background: #e6f9f9;
+}
+
+.medicine-table th {
+  padding: 14px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.medicine-table td {
+  padding: 14px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #bdeeee;
+  color: #0f4f4f;
+}
+
+.medicine-table tr:hover {
+  background: linear-gradient(90deg, #d6f7f7, #ffffff);
+}
+
+/* ===== Action Buttons ===== */
+.action-btn {
+  background: #0bb3b3;
+  color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  padding: 7px 18px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-right: 6px;
+}
+
+.action-btn:hover {
+  background: #2e9d9d;
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background: #fe4d4d;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Add Medicine Form =====
+.form-container {
+  margin-top: 40px;
+  margin-right: 40px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.07);
+  border: 1px solid #bdeeee;
+  max-width: 520px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ===== Title ===== */
+/* .form-container h2 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #0b6f6f;
+} */ 
+
+/* ===== Form ===== */
+.medicine-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ===== Inputs ===== */
+.medicine-form input {
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #bdeeee;
+  outline: none;
+  color: #0f4f4f;
+  transition: all 0.25s ease;
+}
+
+.medicine-form input::placeholder {
+  color: #7aa8a8;
+}
+
+.medicine-form input:focus {
+  border-color: #0bb3b3;
+  box-shadow: 0 0 0 3px rgba(11, 179, 179, 0.15);
+}
+
+/* ===== Submit Button ===== */
+.btn-primary {
+  margin-top: 10px;
+  background: linear-gradient(90deg, #0BB3B3, #0A6FB3);
+  color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  padding: 10px 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: #39c3c3;
+  transform: translateY(-1px);
+}

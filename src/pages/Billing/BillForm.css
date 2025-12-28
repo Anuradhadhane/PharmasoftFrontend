@@ -1,0 +1,69 @@
+/* BillForm.css */
+
+.bill-form-container {
+  margin-left: 40px;
+  margin-top: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  max-width: 700px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.bill-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bill-form-container form {
+  
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bill-form-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.bill-form-container button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.bill-form-container button:hover {
+  background-color: #0056b3;
+}
+
+.medicine-item {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.medicine-item input {
+  flex: 1;
+  min-width: 150px;
+}
+
+.medicine-item button {
+  flex: 0;
+  background-color: #dc3545;
+}
+
+.medicine-item button:hover {
+  background-color: #a71d2a;
+}

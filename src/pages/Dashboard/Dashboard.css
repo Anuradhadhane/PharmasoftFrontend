@@ -1,0 +1,116 @@
+/* PAGE */
+.dashboard-page {
+  margin-left: 0px;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+/* HERO IMAGE */
+.dashboard-hero {
+  height: 220px;
+  background:
+    linear-gradient(
+      rgba(254, 254, 254, 0.075),
+      rgba(11, 111, 174, 0.5)
+    ),
+    url("../../assets/splash.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* HERO TEXT (GLASS) */
+.dashboard-hero-content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  padding: 34px 44px;
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  border-radius: 30px;
+  box-shadow: 0 35px 70px rgba(11, 111, 174, 0.25);
+  margin-bottom: -90px;
+}
+
+.dashboard-hero-content h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.dashboard-hero-content p {
+  font-size: 15px;
+  color: var(--secondary);
+}
+
+/* OVERLAP CONTAINER */
+.dashboard-wrapper {
+  padding: 0 40px 40px ;
+}
+
+/* GLASS CARD */
+.dashboard-glass {
+  margin-top: 100px;
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border-radius: 30px;
+  padding: 44px;
+  box-shadow: 0 40px 80px rgba(11, 111, 174, 0.2);
+}
+
+/* STAT BOX */
+.stat-box {
+  background: linear-gradient(145deg, #3b8fc7, #0b1e2f);
+  border-radius: 24px;
+  padding: 30px;
+  text-align: center;
+    border-left: 5px solid #00A6B6;
+
+  color: var(--accent);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-6px);
+}
+
+.stat-box span {
+  font-size: 14px;
+  color: #9ccfd6;
+}
+
+.stat-box h2 {
+  font-size: 38px;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+/* DANGER */
+.stat-box.danger {
+  border-left: 5px solid #ef4444;
+  color: #ef4444;
+}
+
+/* CONTENT BOX */
+.content-box {
+  background: linear-gradient(145deg, #0b6fae, #0b1220);
+  border-radius: 24px;
+  padding: 30px;
+  color: #e6f6f8;
+  border-left: 5px solid #00A6B6;
+  box-shadow: 0 22px 45px rgba(11, 111, 174, 0.4);
+}
+
+.content-box h4 {
+  color: #0bb3b3;
+  margin-bottom: 16px;
+}
+
+.content-box li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #d2f1f3;
+}

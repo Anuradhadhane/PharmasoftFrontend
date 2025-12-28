@@ -1,0 +1,27 @@
+/* ROOT */
+.app-layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* MAIN CONTENT */
+.app-content {
+ 
+  margin-left: 220px;
+  width: calc(100% - 260px);
+  height: 100vh;
+  overflow-y: fix;   /* ✅ ONLY scroll here */
+  background: #f4f7fb;
+}

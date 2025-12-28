@@ -1,0 +1,118 @@
+/* ===== Page Centering ===== */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== Container ===== */
+.customer-container {
+  margin-left: 40px;
+  margin-top: 40px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 1100px;
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 16px;
+  border: 1px solid #bdeeee;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.07);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ===== Title ===== */
+.customer-container h2 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #0b6f6f;
+}
+
+/* ===== Add Button ===== */
+.add-btn {
+  background: #0bb3b3;
+  color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  padding: 7px 18px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: all 0.25s ease;
+}
+
+.add-btn:hover {
+  background: #39c3c3;
+  transform: translateY(-1px);
+}
+
+/* ===== Table ===== */
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customer-table thead {
+  background: #0bb3b3;
+}
+
+.customer-table th {
+  padding: 14px;
+  color: #ffffff;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.customer-table td {
+  padding: 14px;
+  border-bottom: 1px solid #bdeeee;
+  color: #0f4f4f;
+}
+
+.customer-table tr:hover {
+  background: linear-gradient(90deg, #d6f7f7, #ffffff);
+}
+
+/* ===== Action Buttons ===== */
+.action-cell {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  border: none;
+  border-radius: 22px;
+  padding: 7px 18px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.25s ease;
+}
+
+.edit-btn {
+  background: #0bb3b3;
+}
+
+.edit-btn:hover {
+  background: #39c3c3;
+}
+
+.delete-btn {
+  background: #ef4444;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

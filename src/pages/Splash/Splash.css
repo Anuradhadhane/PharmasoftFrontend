@@ -1,0 +1,45 @@
+.splash {
+  height: 100vh;
+  width: 100vw;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.574) 0%,
+      rgba(230, 249, 249, 0.729) 50%,
+      rgba(11, 179, 179, 0.42) 100%
+    ),
+    url("../../assets/splash.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 👇 BIGGER LOGO */
+.splash-logo {
+  width: 380px;     /* increase size here */
+  height: auto;
+  margin-bottom: 22px;
+}
+
+/* TITLE */
+.splash-logo {
+  animation: zoomIn 1.2s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

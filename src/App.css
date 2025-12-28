@@ -1,38 +1,201 @@
-.App {
+/* =========================
+   GLOBAL BODY & FONTS
+========================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Arial', sans-serif;
+  color: #1f2937; /* dark text */
+}
+
+/* =========================
+   APP LAYOUT
+========================= */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar already fixed */
+.sidebar {
+  width: 260px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 100;
+}
+
+.sidebar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 40px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar li {
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: background 0.2s;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background: #39c3c3;
+}
+
+/* MAIN CONTENT */
+.app-main {
+  position: absolute;
+  margin-left: 260px; /* SAME AS SIDEBAR WIDTH */
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f7fbfb, #eef7f6);
+  padding: 2px 2px;
+}
+
+
+/* PAGE HEADER */
+.page-header {
+  background: linear-gradient(135deg, #39c3c3, #0bb3b3);
   color: white;
+  padding: 18px 25px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-.App-link {
-  color: #61dafb;
+.page-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.page-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+
+
+/* =========================
+   TABLES
+========================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th {
+  text-align: left;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px;
+  border-bottom: 2px solid #e5e7eb;
+  background: linear-gradient(10deg, #0BB3B3, #0A6FB3);
+}
+
+table td {
+  padding: 14px 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.unread {
+  background: #e6f9f9; /* soft pharmacy alert */
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  background: linear-gradient(90deg,  #0BB3B3, #0A6FB3);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: #39c3c3;
+}
+
+/* =========================
+   EMPTY STATES
+========================= */
+
+.empty {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 30px;
+}
+
+/* =========================
+   FORM ELEMENTS
+========================= */
+
+input, select {
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #9ddede;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #0bb3b3;
+  box-shadow: 0 0 0 2px rgba(11,179,179,0.25);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
   }
+
+  .app-main {
+    margin-left: 0;
+    width: 100%;
+    padding: 16px;
+    position: fixed;
+  }
+}
+:root {
+  --primary: #0A6FB3;        /* Deep blue (logo text) */
+  --secondary: #00A6B6;      /* Teal (logo accent) */
+  --accent: #0BB3B3;         /* Bright aqua */
+  --dark: #0B1220;           /* Dark cards */
+  --danger: #EF4444;         /* Expired red */
+  --bg: #F4F7FB;             /* Page background */
+  --glass: rgba(255,255,255,0.65);
 }

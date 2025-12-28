@@ -1,0 +1,169 @@
+/* ===== Container ===== */
+.container {
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 16px;
+  border: 1px solid #bdeeee;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.07);
+  animation: fadeIn 0.3s ease-in-out;
+  margin: 20px auto;
+}
+
+/* ===== Title ===== */
+.container h2 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #0b6f6f;
+  margin-bottom: 20px;
+}
+
+/* ===== Add / Create Button ===== */
+.btn-success {
+  background: #0bb3b3;
+  color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-success:hover {
+  background: #39c3c3;
+  transform: translateY(-1px);
+}
+
+/* ===== Table ===== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background: #e6f9f9;
+  color: #ffffff;
+  padding: 14px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.table td {
+  padding: 14px;
+  border-bottom: 1px solid #bdeeee;
+  color: #0f4f4f;
+}
+
+/* ===== Table Row Hover ===== */
+.table tr:hover {
+  background: linear-gradient(90deg, #d6f7f7, #ffffff);
+}
+
+/* ===== Action Buttons ===== */
+.btn-primary, .btn-warning, .btn-danger {
+  border-radius: 22px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-right: 6px;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary { background: #0bb3b3; }
+.btn-primary:hover { background: #39c3c3; transform: translateY(-1px); }
+
+.btn-warning { background: #f59e0b; }
+.btn-warning:hover { background: #d97706; transform: translateY(-1px); }
+
+.btn-danger { background: #ef4444; }
+.btn-danger:hover { background: #dc2626; transform: translateY(-1px); }
+
+
+
+/* ===== Print Bill Section ===== */
+.print-container {
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 16px;
+  border: 1px solid #bdeeee;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.07);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.print-container h2, .print-container h3, .print-container p {
+  color: #0b6f6f;
+  margin: 8px 0;
+}
+
+.print-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+}
+
+.print-container th, .print-container td {
+  border: 1px solid #bdeeee;
+  padding: 10px;
+  text-align: left;
+}
+
+.print-container th {
+  background: #e6f9f9;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ===== Print Button ===== */
+.print-container button {
+  background: #0bb3b3;
+  color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.25s ease;
+}
+
+.print-container button:hover {
+  background: #39c3c3;
+  transform: translateY(-1px);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Universal Button Styling for Billing Module */
+.btn-success, .btn-primary, .btn-warning, .btn-danger {
+  border-radius: 22px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  color: #fff;
+}
+
+.btn-success { background: #0bb3b3; }
+.btn-success:hover { background: #39c3c3; transform: translateY(-1px); }
+
+.btn-primary { background: #0bb3b3; }
+.btn-primary:hover { background: #39c3c3; transform: translateY(-1px); }
+
+.btn-warning { background: #f59e0b; }
+.btn-warning:hover { background: #d97706; transform: translateY(-1px); }
+
+.btn-danger { background: #ef4444; }
+.btn-danger:hover { background: #dc2626; transform: translateY(-1px); }
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start; /* or center */
+}
+
