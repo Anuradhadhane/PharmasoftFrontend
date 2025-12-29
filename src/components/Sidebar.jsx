@@ -12,7 +12,7 @@ import {
 import "./Sidebar.css";
 import logo from "../assets/logo-h.png";
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }) {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? "active" : ""}`}>
       {/* LOGO */}
       <div className="sidebar-header">
         <img src={logo} alt="PharmaSoft" />
@@ -44,7 +44,7 @@ export default function Sidebar() {
             key={item.name}
             className={location.pathname === item.path ? "active" : ""}
           >
-            <Link to={item.path}>
+            <Link to={item.path} onClick={onClose}>
               <span className="icon">{item.icon}</span>
               <span className="text">{item.name}</span>
             </Link>

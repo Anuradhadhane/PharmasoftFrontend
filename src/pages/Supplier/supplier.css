@@ -1,15 +1,17 @@
 /* ===== Container ===== */
 .supplier-container {
-  margin-left: 40px;
-  margin-top: 40px;
-  margin-bottom: 80px;
+  margin: 0 auto;                /* ✅ center */
+  width: 100%;
+  max-width: 1200px;             /* ✅ stable width */
   background: #ffffff;
-  padding: 26px;
+  padding: 20px;
   border-radius: 16px;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.07);
   border: 1px solid #bdeeee;
   animation: fadeIn 0.3s ease-in-out;
 }
+
+
 
 /* ===== Title ===== */
 .supplier-container h2 {
@@ -94,6 +96,17 @@
 
 .supplier-table .delete-btn:hover {
   background: #dc2626;
+}
+/* PAGE WRAPPER */
+.supplier-page {
+  width: 100%;
+  padding: 12px;
+}
+
+/* TABLE RESPONSIVE */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
 }
 
 

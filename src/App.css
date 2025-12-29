@@ -5,73 +5,15 @@
 body {
   margin: 0;
   padding: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   font-family: 'Arial', sans-serif;
-  color: #1f2937; /* dark text */
+  color: #1f2937;
+  background: var(--bg);
 }
 
 /* =========================
-   APP LAYOUT
+   PAGE HEADER
 ========================= */
 
-.app-layout {
-  display: flex;
-  min-height: 100vh;
-}
-
-/* Sidebar already fixed */
-.sidebar {
-  width: 260px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  z-index: 100;
-}
-
-.sidebar .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  padding: 12px 15px;
-  margin-bottom: 12px;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: background 0.2s;
-}
-
-.sidebar li:hover,
-.sidebar li.active {
-  background: #39c3c3;
-}
-
-/* MAIN CONTENT */
-.app-main {
-  position: absolute;
-  margin-left: 260px; /* SAME AS SIDEBAR WIDTH */
-  width: calc(100% - 260px);
-  min-height: 100vh;
-  background: linear-gradient(180deg, #f7fbfb, #eef7f6);
-  padding: 2px 2px;
-}
-
-
-/* PAGE HEADER */
 .page-header {
   background: linear-gradient(135deg, #39c3c3, #0bb3b3);
   color: white;
@@ -91,8 +33,6 @@ body {
   opacity: 0.9;
 }
 
-
-
 /* =========================
    TABLES
 ========================= */
@@ -103,12 +43,9 @@ table {
 }
 
 table th {
-  text-align: left;
-  color: #ffffff;
-  font-weight: 600;
-  padding: 12px;
-  border-bottom: 2px solid #e5e7eb;
   background: linear-gradient(10deg, #0BB3B3, #0A6FB3);
+  color: #fff;
+  padding: 12px;
 }
 
 table td {
@@ -116,86 +53,39 @@ table td {
   border-top: 1px solid #e5e7eb;
 }
 
-.unread {
-  background: #e6f9f9; /* soft pharmacy alert */
-}
-
 /* =========================
    BUTTONS
 ========================= */
 
 button {
-  background: linear-gradient(90deg,  #0BB3B3, #0A6FB3);
+  background: linear-gradient(90deg, #0BB3B3, #0A6FB3);
   color: white;
   border: none;
   border-radius: 20px;
   padding: 6px 14px;
-  font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s;
-}
-
-button:hover {
-  background: #39c3c3;
 }
 
 /* =========================
-   EMPTY STATES
-========================= */
-
-.empty {
-  text-align: center;
-  color: #6b7280;
-  margin-top: 30px;
-}
-
-/* =========================
-   FORM ELEMENTS
+   FORMS
 ========================= */
 
 input, select {
+  width: 100%;
   padding: 8px 12px;
-  margin-bottom: 12px;
   border-radius: 8px;
   border: 1px solid #9ddede;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-input:focus, select:focus {
-  outline: none;
-  border-color: #0bb3b3;
-  box-shadow: 0 0 0 2px rgba(11,179,179,0.25);
 }
 
 /* =========================
-   RESPONSIVE
+   VARIABLES
 ========================= */
 
-@media (max-width: 768px) {
-  .app-layout {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    flex-direction: row;
-    overflow-x: auto;
-  }
-
-  .app-main {
-    margin-left: 0;
-    width: 100%;
-    padding: 16px;
-    position: fixed;
-  }
-}
 :root {
-  --primary: #0A6FB3;        /* Deep blue (logo text) */
-  --secondary: #00A6B6;      /* Teal (logo accent) */
-  --accent: #0BB3B3;         /* Bright aqua */
-  --dark: #0B1220;           /* Dark cards */
-  --danger: #EF4444;         /* Expired red */
-  --bg: #F4F7FB;             /* Page background */
+  --primary: #0A6FB3;
+  --secondary: #00A6B6;
+  --accent: #0BB3B3;
+  --danger: #EF4444;
+  --bg: #F4F7FB;
   --glass: rgba(255,255,255,0.65);
 }

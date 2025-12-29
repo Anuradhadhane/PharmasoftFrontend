@@ -66,3 +66,119 @@ aside {
   background-color: inherit !important;
 }
 
+/* =====================
+   GLOBAL RESPONSIVE FIX
+===================== */
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* MAIN CONTENT AREA */
+.main-content,
+.dashboard-page,
+.medicine-container,
+.supplier-container,
+.billing-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 16px;
+}
+
+/* =====================
+   SIDEBAR RESPONSIVE
+===================== */
+.sidebar {
+  width: 240px;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.main-content {
+  margin-left: 240px;
+  transition: margin-left 0.3s ease;
+}
+
+/* =====================
+   TABLE RESPONSIVE
+===================== */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* =====================
+   IMAGE FIX
+===================== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================
+   FORM FIX
+===================== */
+input,
+select,
+textarea,
+button {
+  width: 100%;
+}
+
+/* =====================
+   TABLET & MOBILE
+===================== */
+@media (max-width: 992px) {
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* =====================
+   SMALL DEVICES
+===================== */
+@media (max-width: 768px) {
+
+  .dashboard-hero {
+    height: 160px;
+  }
+
+  .dashboard-hero-content {
+    position: static;
+    margin-top: -40px;
+    padding: 20px;
+  }
+
+  .dashboard-hero-content h1 {
+    font-size: 26px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  table {
+    min-width: 700px;
+  }
+}
+
+

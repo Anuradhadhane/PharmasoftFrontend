@@ -1,69 +1,166 @@
-/* BillForm.css */
-
-.bill-form-container {
-  margin-left: 40px;
-  margin-top: 40px;
-  margin-right: 40px;
-  margin-bottom: 40px;
-  max-width: 700px;
+/* PAGE */
+.billing-page {
+  min-height: 100vh;
+  background: #f4f7fb;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fafafa;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
 }
 
-.bill-form-container h2 {
-  text-align: center;
+/* CARD */
+.billing-container {
+  width: 100%;
+  max-width: 1100px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid #bdeeee;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.07);
+}
+
+/* TITLE */
+.billing-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0A6FB3;
   margin-bottom: 20px;
 }
 
-.bill-form-container form {
-  
+/* SECTIONS */
+.section {
+  margin-bottom: 26px;
+}
+
+.section h4 {
+  margin-bottom: 12px;
+  color: #0bb3b3;
+}
+
+/* FORM GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.form-grid input,
+.search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #bdeeee;
+  font-size: 0.9rem;
+}
+
+.form-grid input:focus,
+.search-input:focus {
+  outline: none;
+  border-color: #0bb3b3;
+  box-shadow: 0 0 0 2px rgba(11,179,179,0.2);
+}
+
+/* ERRORS */
+.error {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+/* SEARCH LIST */
+.search-list {
+  margin-top: 8px;
+  border: 1px solid #bdeeee;
+  border-radius: 10px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.search-list li {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.bill-form-container input {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-.bill-form-container button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
+  justify-content: space-between;
+  padding: 10px 14px;
   cursor: pointer;
+}
+
+.search-list li:hover {
+  background: #e6f9f9;
+}
+
+/* TABLE */
+.bill-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bill-table thead {
+  background: linear-gradient(90deg, #0BB3B3, #0A6FB3);
+}
+
+.bill-table th {
+  padding: 12px;
+  color: white;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.bill-table td {
+  padding: 12px;
+  border-bottom: 1px solid #bdeeee;
+}
+
+.bill-table input {
+  width: 60px;
+  padding: 6px;
+}
+
+/* TOTAL */
+.total-box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-top: 2px solid #0A6FB3;
+  padding-top: 12px;
   margin-top: 10px;
 }
 
-.bill-form-container button:hover {
-  background-color: #0056b3;
-}
-
-.medicine-item {
+/* ACTIONS */
+.billing-actions {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
 }
 
-.medicine-item input {
-  flex: 1;
-  min-width: 150px;
+.primary-btn {
+  background: #0bb3b3;
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 22px;
+  cursor: pointer;
 }
 
-.medicine-item button {
-  flex: 0;
-  background-color: #dc3545;
+.secondary-btn {
+  background: #0A6FB3;
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 22px;
+  cursor: pointer;
 }
 
-.medicine-item button:hover {
-  background-color: #a71d2a;
+.primary-btn:hover,
+.secondary-btn:hover {
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .billing-actions {
+    flex-direction: column;
+  }
 }

@@ -20,42 +20,71 @@ export default function PrintBill() {
     content: () => componentRef.current
   });
 
-  if (!bill) return <h3>Loading...</h3>;
+  if (!bill) return <h3 className="loading">Loading...</h3>;
 
   return (
-    <div>
-      
+    <div className="bill-page">
+      <div className="bill-actions">
+        <button onClick={handlePrint} className="print-btn">
+          🖨 Print Bill
+        </button>
+      </div>
 
-      <div ref={componentRef}>
-        <h2>Pharmacy Bill</h2>
+      <div className="bill-container" ref={componentRef}>
+        {/* HEADER */}
+        <div className="bill-header">
+          <h1>PHARMACY BILL</h1>
+          <p className="subtitle">Thank you for your purchase</p>
+        </div>
 
-        <p>Name: {bill.customer.name}</p>
-        <p>Phone: {bill.customer.phone}</p>
+        {/* CUSTOMER INFO */}
+        <div className="bill-info">
+          <div>
+            <strong>Customer Name:</strong> {bill.customer.name}
+          </div>
+          <div>
+            <strong>Phone:</strong> {bill.customer.phone}
+          </div>
+          <div>
+            <strong>Bill ID:</strong> #{bill.id}
+          </div>
+        </div>
 
-        <table border="1" width="100%">
+        {/* TABLE */}
+        <table className="bill-table">
           <thead>
             <tr>
+              <th>#</th>
               <th>Medicine</th>
               <th>Qty</th>
-              <th>Price</th>
-              <th>Amount</th>
+              <th>Price (₹)</th>
+              <th>Amount (₹)</th>
             </tr>
           </thead>
           <tbody>
             {bill.medicines.map((m, i) => (
               <tr key={i}>
+                <td>{i + 1}</td>
                 <td>{m.medicineName}</td>
                 <td>{m.quantity}</td>
-                <td>₹{m.price}</td>
-                <td>₹{m.amount}</td>
+                <td>{m.price}</td>
+                <td>{m.amount}</td>
               </tr>
             ))}
           </tbody>
         </table>
 
-        <h3>Total: ₹{bill.totalAmount}</h3>
+        {/* TOTAL */}
+        <div className="bill-total">
+          <span>Total Amount</span>
+          <span>₹ {bill.totalAmount}</span>
+        </div>
 
-        <button className="btn-success" onClick={handlePrint}>Print</button>
+        {/* FOOTER */}
+        <div className="bill-footer">
+          <p>✔ Medicines once sold cannot be returned</p>
+          <p>✔ Get well soon!</p>
+        </div>
       </div>
     </div>
   );

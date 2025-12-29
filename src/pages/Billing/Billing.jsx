@@ -133,105 +133,128 @@ export default function Billing() {
 
   // ================= UI =================
   return (
-    <div className="container">
-      <h2>Billing</h2>
+  <div className="billing-page">
+    <div className="billing-container">
+      <h2 className="billing-title">Billing</h2>
 
-      {/* CUSTOMER */}
-      <h4>Customer Details</h4>
+      {/* CUSTOMER DETAILS */}
+      <div className="section">
+        <h4>Customer Details</h4>
 
-      <input
-        placeholder="Customer Name"
-        value={customer.name}
-        onChange={(e) =>
-          setCustomer({ ...customer, name: e.target.value })
-        }
-      />
-      {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
+        <div className="form-grid">
+          <div>
+            <input
+              placeholder="Customer Name"
+              value={customer.name}
+              onChange={(e) =>
+                setCustomer({ ...customer, name: e.target.value })
+              }
+            />
+            {errors.name && <p className="error">{errors.name}</p>}
+          </div>
 
-      <input
-        placeholder="Phone"
-        value={customer.phone}
-        onChange={(e) =>
-          setCustomer({ ...customer, phone: e.target.value })
-        }
-      />
-      {errors.phone && <p style={{ color: "red" }}>{errors.phone}</p>}
+          <div>
+            <input
+              placeholder="Phone"
+              value={customer.phone}
+              onChange={(e) =>
+                setCustomer({ ...customer, phone: e.target.value })
+              }
+            />
+            {errors.phone && <p className="error">{errors.phone}</p>}
+          </div>
 
-      <input
-        placeholder="Email (optional)"
-        value={customer.email}
-        onChange={(e) =>
-          setCustomer({ ...customer, email: e.target.value })
-        }
-      />
-      {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+          <div>
+            <input
+              placeholder="Email (optional)"
+              value={customer.email}
+              onChange={(e) =>
+                setCustomer({ ...customer, email: e.target.value })
+              }
+            />
+            {errors.email && <p className="error">{errors.email}</p>}
+          </div>
+        </div>
+      </div>
 
-      {/* MEDICINE SEARCH */}
-      <h4>Search Medicine</h4>
-      <input
-        placeholder="Type medicine name..."
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
-      />
+      {/* SEARCH MEDICINE */}
+      <div className="section">
+        <h4>Search Medicine</h4>
 
-      {medicineList.length > 0 && (
-        <ul>
-          {medicineList.map((m) => (
-            <li
-              key={m.id}
-              style={{ cursor: "pointer" }}
-              onClick={() => addToBill(m)}
-            >
-              {m.name} - ₹{m.price}
-            </li>
-          ))}
-        </ul>
-      )}
+        <input
+          className="search-input"
+          placeholder="Type medicine name..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+
+        {medicineList.length > 0 && (
+          <ul className="search-list">
+            {medicineList.map((m) => (
+              <li key={m.id} onClick={() => addToBill(m)}>
+                <span>{m.name}</span>
+                <span>₹{m.price}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
 
       {/* BILL TABLE */}
-      <table border="1" width="100%">
-        <thead>
-          <tr>
-            <th>Medicine</th>
-            <th>Price</th>
-            <th>Qty</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {billItems.map((item) => (
-            <tr key={item.id}>
-              <td>{item.name}</td>
-              <td>₹{item.price}</td>
-              <td>
-                <input
-                  type="number"
-                  min="1"
-                  value={item.quantity}
-                  onChange={(e) =>
-                    updateQuantity(item.id, Number(e.target.value))
-                  }
-                />
-              </td>
-              <td>₹{item.price * item.quantity}</td>
+      <div className="section">
+        <table className="bill-table">
+          <thead>
+            <tr>
+              <th>Medicine</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Total</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {billItems.map((item) => (
+              <tr key={item.id}>
+                <td>{item.name}</td>
+                <td>₹{item.price}</td>
+                <td>
+                  <input
+                    type="number"
+                    min="1"
+                    value={item.quantity}
+                    onChange={(e) =>
+                      updateQuantity(item.id, Number(e.target.value))
+                    }
+                  />
+                </td>
+                <td>₹{item.price * item.quantity}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-      <h3>Total Amount: ₹{totalAmount}</h3>
+      {/* TOTAL */}
+      <div className="total-box">
+        <span>Total Amount</span>
+        <span>₹ {totalAmount}</span>
+      </div>
 
-      <button className="btn-success" onClick={handleSaveBill}>Save Bill</button>
-
-      {/* ✅ PRINT BILL BUTTON */}
-      {savedBillId && (
-        <button className="btn-success"
-          
-          onClick={() => navigate(`/print-bill/${savedBillId}`)}
-        >
-          Print Bill
+      {/* ACTIONS */}
+      <div className="billing-actions">
+        <button className="primary-btn" onClick={handleSaveBill}>
+          Save Bill
         </button>
-      )}
+
+        {savedBillId && (
+          <button
+            className="secondary-btn"
+            onClick={() => navigate(`/print-bill/${savedBillId}`)}
+          >
+            Print Bill
+          </button>
+        )}
+      </div>
     </div>
-  );
+  </div>
+);
 }

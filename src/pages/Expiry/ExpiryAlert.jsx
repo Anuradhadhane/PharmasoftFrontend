@@ -26,6 +26,7 @@ export default function ExpiryAlert() {
       {alerts.length === 0 ? (
         <p className="empty">No expiry alerts 🎉</p>
       ) : (
+        <div className="table-responsive">
         <table className="expiry-table">
           <thead>
             <tr>
@@ -50,6 +51,7 @@ export default function ExpiryAlert() {
             ))}
           </tbody>
         </table>
+        </div>
       )}
     </div>
   );

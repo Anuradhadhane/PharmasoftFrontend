@@ -1,17 +1,14 @@
-/* ===== Page Centering ===== */
-.page-wrapper {
-  display: flex;
-  justify-content: center;
+/* PAGE WRAPPER */
+.customer-page {
+  width: 100%;
+  padding: 12px;
 }
 
-/* ===== Container ===== */
+/* CONTAINER */
 .customer-container {
-  margin-left: 40px;
-  margin-top: 40px;
-  margin-right: 20px;
-  margin-bottom: 40px;
   width: 100%;
   max-width: 1100px;
+  margin: 0 auto;
   background: #ffffff;
   padding: 26px;
   border-radius: 16px;
@@ -19,6 +16,13 @@
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.07);
   animation: fadeIn 0.3s ease-in-out;
 }
+
+/* TABLE RESPONSIVE */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
 
 /* ===== Title ===== */
 .customer-container h2 {

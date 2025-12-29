@@ -3,24 +3,26 @@
 ================================= */
 .sidebar {
   background: #ffffff !important;
-  background-color: #ffffff !important;
   color: #1f2937 !important;
-
-  /* SIDEBAR */
 
   position: fixed;
   top: 0;
   left: 0;
+
   width: 260px;
   height: 100vh;
-  
-  z-index: 1000;
-  overflow: hidden;
-  border-right: 1px solid #e5e7eb; 
+
+  z-index: 1500;
+  border-right: 1px solid #e5e7eb;
 
   display: flex;
   flex-direction: column;
+
+  /* ✅ IMPORTANT */
+  transform: translateX(0);
+  transition: transform 0.3s ease;
 }
+
 
 /* ===============================
    HEADER
@@ -119,4 +121,20 @@
 
 .sidebar-menu::-webkit-scrollbar-track {
   background: transparent;
+}
+/* ===============================
+   RESPONSIVE SIDEBAR
+================================= */
+
+/* MOBILE & TABLET */
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
 }

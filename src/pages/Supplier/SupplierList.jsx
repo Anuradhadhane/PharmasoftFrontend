@@ -31,53 +31,64 @@ export default function SupplierList() {
     }
   };
 
-  return (
+ return (
+  <div className="supplier-page">
     <div className="supplier-container">
       <h2>Suppliers</h2>
-      <button className="add-supplier-btn" onClick={() => navigate("/suppliers/add")}>
+
+      <button
+        className="add-supplier-btn"
+        onClick={() => navigate("/suppliers/add")}
+      >
         Add Supplier
       </button>
-      <table className="supplier-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Contact</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {suppliers.map((supplier) => (
-            <tr key={supplier.id}
-            className={supplier.unread ? "unread" : ""}>
-              <td>{supplier.name}</td>
-              <td>{supplier.contact}</td>
-              <td>{supplier.email}</td>
-              <td>{supplier.address}</td>
-              <td>
-  <div className="action-btn-group">
-    <button
-      className="action-btn edit-btn"
-      onClick={() => navigate(`/suppliers/edit/${supplier.id}`)}
-    >
-      Edit
-    </button>
 
-    <button
-      className="action-btn delete-btn"
-      onClick={() => handleDelete(supplier.id)}
-    >
-      Delete
-    </button>
-  </div>
-</td>
-
-               
+      <div className="table-responsive">
+        <table className="supplier-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            {suppliers.map((supplier) => (
+              <tr key={supplier.id}>
+                <td>{supplier.name}</td>
+                <td>{supplier.contact}</td>
+                <td>{supplier.email}</td>
+                <td>{supplier.address}</td>
+                <td>
+                  <div className="action-btn-group">
+                    <button
+                      className="action-btn edit-btn"
+                      onClick={() =>
+                        navigate(`/suppliers/edit/${supplier.id}`)
+                      }
+                    >
+                      Edit
+                    </button>
+
+                    <button
+                      className="action-btn delete-btn"
+                      onClick={() => handleDelete(supplier.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
     </div>
-  );
+  </div>
+);
+
 }

@@ -33,6 +33,7 @@ export default function MedicineList() {
   };
 
   return (
+    <div className="medicine-page">
     <div className="medicine-container">
       <h2>Medicines</h2>
 
@@ -40,6 +41,7 @@ export default function MedicineList() {
         <button className="add-btn">Add Medicine</button>
       </Link>
 
+    <div className="table-responsive">
       <table className="medicine-table">
         <thead>
           <tr>
@@ -71,6 +73,8 @@ export default function MedicineList() {
           ))}
         </tbody>
       </table>
+    </div>
+    </div>
     </div>
   );
 }

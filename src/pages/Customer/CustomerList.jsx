@@ -27,18 +27,19 @@ export default function CustomerList() {
     }
   };
 
-  return (
-    <div className="page-wrapper">
-      <div className="customer-container">
-        <h2>Customer List</h2>
+return (
+  <div className="customer-page">
+    <div className="customer-container">
+      <h2>Customer List</h2>
 
-        <button
-          className="add-btn"
-          onClick={() => navigate("/add-customer")}
-        >
-          Add Customer
-        </button>
+      <button
+        className="add-btn"
+        onClick={() => navigate("/add-customer")}
+      >
+        Add Customer
+      </button>
 
+      <div className="table-responsive">
         <table className="customer-table">
           <thead>
             <tr>
@@ -57,28 +58,35 @@ export default function CustomerList() {
                 <td>{c.name}</td>
                 <td>{c.phone}</td>
                 <td>{c.email}</td>
-                <td className="action-cell">
-                  <button
-                    className="action-btn edit-btn"
-                    onClick={() =>
-                      navigate(`/edit-customer/${c.customerId}`)
-                    }
-                  >
-                    Edit
-                  </button>
+                <td>
+                  <div className="action-cell">
+                    <button
+                      className="action-btn edit-btn"
+                      onClick={() =>
+                        navigate(`/edit-customer/${c.customerId}`)
+                      }
+                    >
+                      Edit
+                    </button>
 
-                  <button
-                    className="action-btn delete-btn"
-                    onClick={() => handleDelete(c.customerId)}
-                  >
-                    Delete
-                  </button>
+                    <button
+                      className="action-btn delete-btn"
+                      onClick={() =>
+                        handleDelete(c.customerId)
+                      }
+                    >
+                      Delete
+                    </button>
+                    
+                  </div>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+
     </div>
-  );
+  </div>
+);
 }
