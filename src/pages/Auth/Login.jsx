@@ -9,7 +9,7 @@ import {
   MDBInput,
   MDBBtn
 } from "mdb-react-ui-kit";
-import logo from "../../assets/logo-v.png";   // 👈 ADD THIS
+import logo from "../../assets/logo-v.png";
 import "./Login.css";
 
 export default function Login() {
@@ -19,7 +19,6 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
     if (username === "admin" && password === "admin123") {
       localStorage.setItem("adminLoggedIn", "true");
       navigate("/dashboard");
@@ -29,33 +28,31 @@ export default function Login() {
   };
 
   return (
-    <MDBContainer fluid className="background-radial-gradient overflow-hidden">
-      <MDBRow className="d-flex justify-content-center align-items-center vh-100">
+    <MDBContainer fluid className="login-bg">
+      <MDBRow className="login-wrapper justify-content-center align-items-center">
 
-        {/* LEFT TEXT */}
-        <MDBCol lg="6" className="text-white px-5 ps-5">
-         
-              {/* 👇 LOGO */}
-              <img src={logo} alt="Pharmacy Logo" className="login-logo" />
-            
-         
-         
+        {/* LOGO */}
+        <MDBCol
+          lg="4"
+          md="5"
+          className="d-flex justify-content-center align-items-center mb-4 mb-md-0"
+        >
+          <img src={logo} alt="Pharmasoft Logo" className="login-logo" />
         </MDBCol>
 
-        {/* LOGIN CARD */}
-        <MDBCol lg="4" className="position-relative">
-          <div id="radius-shape-1"></div>
-          <div id="radius-shape-2"></div>
-
-          <MDBCard className="bg-glass">
-            <MDBCardBody className="px-4 py-5 text-center">
-
-
-              <h3 className="mb-4">Admin Login</h3>
+        {/* GLASS LOGIN CARD */}
+        <MDBCol
+          lg="4"
+          md="6"
+          className="d-flex justify-content-center align-items-center"
+        >
+          <MDBCard className="glass-card">
+            <MDBCardBody>
+              <h4 className="text-center mb-4">Admin Login</h4>
 
               <form onSubmit={handleLogin}>
                 <MDBInput
-                  className="mb-4"
+                  className="mb-3"
                   label="Username"
                   type="text"
                   value={username}
@@ -73,10 +70,9 @@ export default function Login() {
                 />
 
                 <MDBBtn type="submit" className="w-100" color="info">
-                  Login
+                  LOGIN
                 </MDBBtn>
               </form>
-
             </MDBCardBody>
           </MDBCard>
         </MDBCol>

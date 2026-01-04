@@ -9,14 +9,22 @@ export default function ExpiryAlert() {
     loadAlerts();
   }, []);
 
+  // 🔹 Fetch unread expiry alerts
   const loadAlerts = async () => {
-    const res = await axios.get("http://localhost:9000/api/expiry/all");
+    const res = await axios.get(
+      "http://localhost:9000/api/expiry/alerts"
+    );
     setAlerts(res.data);
   };
 
+  // 🔹 Mark alert as read
   const markRead = async (id) => {
-    await axios.put(`http://localhost:9000/api/expiry/read/${id}`);
-    loadAlerts();
+    await axios.put(
+      `http://localhost:9000/api/expiry/mark-read/${id}`
+    );
+
+    // remove from UI instantly
+    setAlerts(alerts.filter(alert => alert.id !== id));
   };
 
   return (
@@ -27,30 +35,40 @@ export default function ExpiryAlert() {
         <p className="empty">No expiry alerts 🎉</p>
       ) : (
         <div className="table-responsive">
-        <table className="expiry-table">
-          <thead>
-            <tr>
-              <th>Medicine</th>
-              <th>Expiry Date</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {alerts.map((a) => (
-              <tr key={a.id} className={!a.read ? "unread" : ""}>
-                <td>{a.medicineName}</td>
-                <td>{a.expiryDate}</td>
-                <td>
-                  {!a.read ? (
-                    <button onClick={() => markRead(a.id)}>Mark Read</button>
-                  ) : (
-                    "Read"
-                  )}
-                </td>
+          <table className="expiry-table">
+            <thead>
+              <tr>
+                <th>Medicine</th>
+                <th>Expiry Date</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {alerts.map((a) => (
+                <tr key={a.id} className="unread">
+                  <td>
+                    <strong>{a.name}</strong>
+                    <div className="small text-muted">
+                      {a.brand}
+                    </div>
+                  </td>
+
+                  <td>{a.expiryDate}</td>
+
+                  <td>
+                    <button
+                      className="mark-btn"
+                      onClick={() => markRead(a.id)}
+                    >
+                      Mark Read
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+
+          </table>
         </div>
       )}
     </div>

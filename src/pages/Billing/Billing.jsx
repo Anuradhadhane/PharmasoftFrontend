@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./BillForm.css";
+import { addBill } from "../../api/billingApi";
 
 export default function Billing() {
   const navigate = useNavigate();
@@ -114,25 +115,20 @@ export default function Billing() {
       }))
     };
 
-    try {
-      const response = await axios.post(
-        "http://localhost:9000/api/bills",
-        billPayload
-      );
+    
+  try {
+    const res = await addBill(billPayload);
+    setSavedBillId(res.data.id);
+    alert("Bill saved successfully");
+  } catch (err) {
+    console.error(err);
+    alert("Bill save failed");
+  }
+};
 
-      // ✅ BACKEND RETURNS Bill WITH id
-      const billId = response.data.id;
-      setSavedBillId(billId);
-
-      alert("Bill saved successfully");
-    } catch (err) {
-      console.error(err);
-      alert("Bill saving failed");
-    }
-  };
 
   // ================= UI =================
-  return (
+ return (
   <div className="billing-page">
     <div className="billing-container">
       <h2 className="billing-title">Billing</h2>
@@ -201,7 +197,7 @@ export default function Billing() {
       </div>
 
       {/* BILL TABLE */}
-      <div className="section">
+      <div className="table-responsive">
         <table className="bill-table">
           <thead>
             <tr>
@@ -211,6 +207,7 @@ export default function Billing() {
               <th>Total</th>
             </tr>
           </thead>
+
           <tbody>
             {billItems.map((item) => (
               <tr key={item.id}>

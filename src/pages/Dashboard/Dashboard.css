@@ -62,7 +62,7 @@
 
 /* STAT BOX */
 .stat-box {
-  background: linear-gradient(145deg, #3b8fc7, #0b1e2f);
+  background: linear-gradient(220deg, #0BB3B3, #0A6FB3, #074c79, #1b305c);
   border-radius: 24px;
   padding: 30px;
   text-align: center;
@@ -96,7 +96,7 @@
 
 /* CONTENT BOX */
 .content-box {
-  background: linear-gradient(145deg, #0b6fae, #0b1220);
+  background: linear-gradient(220deg, #0BB3B3, #0A6FB3, #074c79, #1b305c);
   border-radius: 24px;
   padding: 30px;
   color: #e6f6f8;

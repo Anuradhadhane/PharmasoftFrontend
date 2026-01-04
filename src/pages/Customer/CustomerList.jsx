@@ -20,12 +20,22 @@ export default function CustomerList() {
     fetchCustomers();
   }, []);
 
-  const handleDelete = async (id) => {
-    if (window.confirm("Are you sure you want to delete this customer?")) {
-      await deleteCustomer(id);
-      fetchCustomers();
-    }
-  };
+const handleDelete = async (id) => {
+  if (!window.confirm("Are you sure you want to delete this customer?")) return;
+
+  try {
+    await deleteCustomer(id);
+
+    // Update UI immediately
+    setCustomers((prev) =>
+      prev.filter((c) => c.customerId !== id)
+    );
+
+  } catch (error) {
+    console.error("Error deleting customer:", error);
+  }
+};
+
 
 return (
   <div className="customer-page">

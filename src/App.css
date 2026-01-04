@@ -43,7 +43,7 @@ table {
 }
 
 table th {
-  background: linear-gradient(10deg, #0BB3B3, #0A6FB3);
+  background: linear-gradient(0deg, #0BB3B3, #0A6FB3);
   color: #fff;
   padding: 12px;
 }
