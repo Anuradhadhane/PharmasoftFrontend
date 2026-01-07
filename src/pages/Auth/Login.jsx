@@ -33,12 +33,13 @@ export default function Login() {
 
         {/* LOGO */}
         <MDBCol
-          lg="4"
-          md="5"
-          className="d-flex justify-content-center align-items-center mb-4 mb-md-0"
-        >
-          <img src={logo} alt="Pharmasoft Logo" className="login-logo" />
-        </MDBCol>
+  lg="4"
+  md="5"
+  className="d-flex justify-content-center align-items-center text-center mb-4 mb-md-0"
+>
+  <img src={logo} alt="Pharmasoft Logo" className="login-logo" />
+</MDBCol>
+
 
         {/* GLASS LOGIN CARD */}
         <MDBCol
