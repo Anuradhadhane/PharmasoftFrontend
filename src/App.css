@@ -43,8 +43,9 @@ table {
 }
 
 table th {
-  background: linear-gradient(0deg, #0BB3B3, #0A6FB3);
-  color: #fff;
+ 
+  color: #ffffff;
+   background: linear-gradient(0deg, #0BB3B3, #0A6FB3);
   padding: 12px;
 }
 
